@@ -4,8 +4,10 @@ Dependencies
 - Node.js 4.5.0
 - npm install gitbook-cli
 - install Calibre from binary at calibre-ebook.org
-- add this to .profile
 
+
+Gitbook needs to find Calibre binaries and libraries, so add this to .profile
+	
 	export PATH=$PATH:/opt/calibre/bin:/root/node-v4.5.0-linux-x64/bin
 	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/calibre/lib
 
