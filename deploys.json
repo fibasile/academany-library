@@ -1,0 +1,25 @@
+{
+    "port": 8080,
+    "deploys": [{
+        "name": "FabAcademyX Coursebook",
+        "type": "github",
+        "repo": "https://github.com/Academany/fabacademyx-handbook",
+        "basepath": "/var/www/html/docs.academany.org/fabacademyx-handbook",
+        "command": "git pull && gitbook build && gitbook pdf && gitbook epub",
+        "branch": "master"
+    },{
+	"name": "FabAcademy Handbook",
+	"type": "github",
+	"repo": "https://github.com/Academany/FabAcademy-Handbook",
+	"basepath": "/var/www/html/docs.academany.org/FabAcademy-Handbook",
+	"command": "git pull && gitbook build && gitbook pdf && gitbook epub",
+        "branch": "master"
+    },{
+	"name": "FabAcademy Assessment",
+        "type": "github",
+        "repo": "https://github.com/Academany/FabAcademy-Assessment",
+        "basepath": "/var/www/html/docs.academany.org/FabAcademy-Assessment",
+        "command": "git pull && gitbook build && gitbook pdf && gitbook epub",
+        "branch": "master"
+    }]
+}

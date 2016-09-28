@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>Academany Docs</title>
+
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+
+<!-- CSS Reset -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+
+<!-- Milligram CSS minified -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.1.0/milligram.min.css" integrity="sha256-pb5/5s6O4c/NyyYG+TVwQVJjJjC2ajZm/7//hl9OwMg=" crossorigin="anonymous" />
+<!-- You should properly set the path from the main file. -->
+
+<style>
+.book {
+text-align: center;
+width: 80%;
+border: 1px solid #dedede;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 20px;
+}
+.book_title {
+border-bottom: 1px solid #dedede;
+}
+.center {
+text-align: center;
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- .container is main centered wrapper -->
+<div class="container">
+
+  <div class="row">
+    <div class="column">
+
+	<div style="margin-top: 50px; margin-bottom: 20px; text-align: center">
+		<img src="academany_small.png">
+		<br><h3>Welcome to the Academany Library</h3>
+		<p>You can find here documents produced by and for the Academy of almost anyhting</p>	
+	</div>
+    </div>
+  </div>
+
+<div id="loading" class="center">
+<p>Loading books..</p>
+<img style="width: 96px" src="spinner.gif">
+</div>
+
+<div id="books">
+</div>
+
+<!--
+<div class="book">
+	<h4 class="book_title">Fab Academy X - Coursebook</h4>
+	<p> <a class="button" href="./fabacademyx-handbook/_book/">Read online</a> <a class="button button-outline" href="./fabacademyx-handbook/book.pdf">PDF</a> <a class="button button-outline" href="./fabacademyx-handbook/book.epub">EPUB</a><a href="http://github.com/academany/fabacademyx-handbook" class="button button-outline">Source</a></p> 
+</div>-->
+
+
+</div>
+
+<script id="bookTemplate" type="text/x-jsrender">
+<div class="book">
+	<h4 class="book_title">{{:name}}</h4> 
+	<p> <a class="button" href="./{{:prefix}}/_book/">Read online</a> <a class="button button-outline" href="./{{:prefix}}/book.pdf">PDF</a> <a class="button button-outline" href="./{{:prefix}}/book.epub">EPUB</a><a href="{{:repo}}" class="button button-outline">Source</a></p> 
+</div>
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/0.9.80/jsrender.min.js"></script>
+<script type="text/javascript"> 
+$(document).ready(function(){
+        var container = $("#books");
+        var tmpl = $.templates("#bookTemplate");
+	console.log('starting');
+
+	$.get('./deploys.json', function(data){
+		var books = data.deploys || [];
+                $('#loading').hide();
+                $.each(books, function(idx,item){
+			console.log(item);
+                        item.prefix = item.basepath.substr(item.basepath.lastIndexOf('/') + 1)
+                         container.append(tmpl.render(item));
+		});
+	});
+
+
+});
+</script>
+</body>
+</html>
