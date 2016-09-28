@@ -6,8 +6,8 @@ Dependencies
 - install Calibre from binary at calibre-ebook.org
 - add this to .profile
 
-export PATH=$PATH:/opt/calibre/bin:/root/node-v4.5.0-linux-x64/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/calibre/lib
+	export PATH=$PATH:/opt/calibre/bin:/root/node-v4.5.0-linux-x64/bin
+	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/calibre/lib
 
 ## How to
 
