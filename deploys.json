@@ -1,24 +1,66 @@
 {
     "port": 8080,
     "deploys": [{
+        "name": "The Academany",
+        "type": "github",
+        "repo": "https://github.com/Academany/Academany",
+        "basepath": "/var/www/html/docs.academany.org/Academany",
+        "command": "git pull && gitbook build && gitbook pdf && gitbook epub",
+        "branch": "master"
+    },{
         "name": "FabAcademyX Coursebook",
         "type": "github",
-        "repo": "https://github.com/Academany/fabacademyx-handbook",
+        "repo": "https://github.com/fibasile/fabacademyx-handbook",
         "basepath": "/var/www/html/docs.academany.org/fabacademyx-handbook",
         "command": "git pull && gitbook build && gitbook pdf && gitbook epub",
         "branch": "master"
     },{
-	"name": "FabAcademy Handbook",
-	"type": "github",
-	"repo": "https://github.com/Academany/FabAcademy-Handbook",
-	"basepath": "/var/www/html/docs.academany.org/FabAcademy-Handbook",
-	"command": "git pull && gitbook build && gitbook pdf && gitbook epub",
+        "name": "FabAcademyX-EU Coursebook",
+        "type": "github",
+        "repo": "https://github.com/FabAcademyGlobal/fabacademyx-eu-handbook",
+        "basepath": "/var/www/html/docs.academany.org/fabacademyx-eu-handbook",
+        "command": "git pull && gitbook build && gitbook pdf && gitbook epub",
         "branch": "master"
     },{
-	"name": "FabAcademy Assessment",
+        "name": "FabAcademy Handbook",
+        "type": "github",
+        "repo": "https://github.com/Academany/FabAcademy-Handbook",
+        "basepath": "/var/www/html/docs.academany.org/FabAcademy-Handbook",
+        "command": "git pull && gitbook build && gitbook pdf && gitbook epub",
+        "branch": "master"
+    },{
+	      "name": "FabAcademy Assessment",
         "type": "github",
         "repo": "https://github.com/Academany/FabAcademy-Assessment",
         "basepath": "/var/www/html/docs.academany.org/FabAcademy-Assessment",
+        "command": "git pull && gitbook build && gitbook pdf && gitbook epub",
+        "branch": "master"
+    },{
+	"name" : "FabAcademy Tutorials",
+	"type" : "github",
+	"repo" : "https://github.com/Academany/FabAcademy-Tutorials",
+	"basepath" : "/var/www/html/docs.academany.org/FabAcademy-Tutorials",
+	"command": "git pull && gitbook build && gitbook pdf && gitbook epub",
+	"branch" : "master"
+    },{
+        "name": "BioAcademy Handbook",
+        "type": "github",
+        "repo": "https://github.com/Academany/BioAcademy-Handbook",
+        "basepath": "/var/www/html/docs.academany.org/BioAcademy-Handbook",
+        "command": "git pull && gitbook build && gitbook pdf && gitbook epub",
+        "branch": "master"
+    },{
+        "name": "BioAcademy Assessment",
+        "type": "github",
+        "repo": "https://github.com/Academany/BioAcademy-Assessment",
+        "basepath": "/var/www/html/docs.academany.org/BioAcademy-Assessment",
+        "command": "git pull && gitbook build && gitbook pdf && gitbook epub",
+        "branch": "master"
+    },{
+        "name": "Textile Academy Handbook",
+        "type": "github",
+        "repo": "https://github.com/Academany/softacademy-handbook",
+        "basepath": "/var/www/html/docs.academany.org/softacademy-handbook",
         "command": "git pull && gitbook build && gitbook pdf && gitbook epub",
         "branch": "master"
     }]
